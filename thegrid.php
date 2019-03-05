@@ -54,7 +54,6 @@
             <button class="add-widget">Add Widget</button>
             <button class="use-demo">Use Demo Content</button>
             <br>
-            <h3>Pickup at eventlistener function for Submit being clicked on</h3>
             <div class="widget-choices hidden">
                 <select id="widget-type">
                     <option>Choose one...</option>
@@ -64,7 +63,20 @@
                 </select>
                 <button id="submit-new-widget">Submit</button>
             </div>
-            <div class="grid-stack">
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="grid-stack"></div>
+                </div>    
+                <script>
+                function removeMe(e)
+                {
+                    target = e.target;
+                    console.log(target);
+                    parent = $(target).parents('.grid-stack-item');
+                    console.log(parent);
+                    $(parent).remove();
+                }
+</script>
             </div>
     </section>
 

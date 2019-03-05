@@ -1,11 +1,22 @@
-.grid-stack-item-content
+
+div
 {
-	border:2px solid black;
+	box-sizing:border-box;
 }
-
-.widget-choices
+.to-the-left
 {
-
+	float:left;
+	padding-left:2px;
+}
+.to-the-right
+{
+	float:right;
+	right:10px;
+}
+.clear
+{
+	float:none;
+	clear:both;
 }
 
 .hidden
