@@ -76,6 +76,20 @@
                     console.log(parent);
                     $(parent).remove();
                 }
+                function showSettings(e)
+                {
+                    console.log("showSettings proc'd");
+                    target = e.target;
+                    menu = $(target).siblings(".widget-settings");
+                    console.log(menu);
+                    //$(menu).attr("style","display:block");
+                }
+                function closeSettings(e)
+                {
+                    target = e.target;
+                    settings = $(target).find(".widget-settings");
+                    $(settings).hide();
+                }
 </script>
             </div>
     </section>

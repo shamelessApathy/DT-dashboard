@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function(){
 								widget = new this.widget(params);
 								break;
 				case "gauge" : console.log("hitting gauge part of switch statement"); 
-								var params = {"x": 50, "y": 100, "gsWidth":2, "gsHeight":2};
+								var params = {"x": 50, "y": 100, "gsWidth":4, "gsHeight":4};
 								widget = new this.widget(params);
 								break;
 				case "graph" : 	console.log("inside graph switch case");	
-								var params = {"x": 0, "y" :0, "gsWidth":6, "gsHeight":2};
+								var params = {"x": 0, "y" :0, "gsWidth":25, "gsHeight":5};
 								widget = new this.widget(params);
 								break;
 				default      : console.log("hit default in switch");
@@ -85,6 +85,16 @@ document.addEventListener("DOMContentLoaded", function(){
 				.attr("data-gs-width", widget.gsWidth)
 				.attr("data-gs-y", 25)
 				.attr("style","top:35px;");
+			if (widgetType === "graph")
+			{
+				$image = "graph-rtm.jpg";
+				$(contentNode).html("<img class='img-responsive' src='" + $image + "' />");
+			}
+			if (widgetType === "gauge")
+			{
+				$image = "gauge-widget.gif";
+				$(contentNode).html("<img src='" + $image + "' />");
+			}
 
 				// Prepend a Title bar to contentNode here
 			var titleBar = $('<div></div>');
@@ -98,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			// Append the internal countent of title bar to it before mount
 			// WidgetTitle                            _ * X
 			var titleInternal = $('<div></div>');
-			$(titleInternal).html("<div class='to-the-left'>"+ widgetType + "</div><div class='to-the-right'><button type='button'><i class='fa fa-window-minimize'></i></button><button type='button'><i class='fa fa-cog'></i></button><button type='button' class='close-button' onclick=removeMe(event)><i class='fa fa-window-close' onClick=removeMe()></i></button></div><div class='clear'></div>");
+			$(titleInternal).html("<div class='to-the-left'>"+ widgetType + "</div><div class='to-the-right'><button type='button'><i class='fa fa-window-minimize'></i></button><button type='button'><i class='fa fa-cog' onClick=showSettings(event)></i></button><div class='widget-settings'><ul class='settings-ul'><li>Custom Setting</li><li>Another Setting</li><li>One more setting</li><button class='close' onClick=closeSettings(event)><i class='fa fa-window-close'></i></button></ul></div><button type='button' class='close-button' onclick=removeMe(event)><i class='fa fa-window-close' onClick=removeMe(event)></i></button></div><div class='clear'></div>");
 			$(titleInternal).appendTo(titleBar);
 
 			$(contentNode).appendTo(containerNode);

@@ -28,3 +28,31 @@ div
 {
 	margin-bottom:20px;
 }
+.widget-settings
+{
+	width:130px;
+	background:#fff;
+	padding:5px;
+	position:absolute;
+	z-index:10;
+	margin-top:10px;
+}
+.widget-settings ul
+{
+	font-size:10px;
+	list-style-type:none;
+}
+.settings-ul
+{
+	display:none;
+}
+.settings-ul li:hover
+{
+	background:#333;
+	color:#fff;
+}
+.widget-settings .close
+{
+	position:relative;
+	right:5px;
+}
