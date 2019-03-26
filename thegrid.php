@@ -52,7 +52,6 @@
             </div>
 
             <button class="add-widget">Add Widget</button>
-            <button class="use-demo">Use Demo Content</button>
             <br>
             <div class="widget-choices hidden">
                 <select id="widget-type">
